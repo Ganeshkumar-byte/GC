@@ -3,7 +3,7 @@ import pandas as pd
 
 # Page config (tab title + layout)
 st.set_page_config(
-    page_title="RCPPR GC Analyzer",
+    page_title="Entity 1",
     layout="centered"
 )
 
@@ -14,8 +14,8 @@ with col1:
     st.image("logo.png", width=80)   # make sure logo file name matches
 
 with col2:
-    st.markdown("## RCPPR GC Analyzer")
-    st.markdown("### Compound Identification Tool")
+    st.markdown("## Entity 1")
+    st.markdown("### GC Retention Finder")
 
 st.write("---")
 
