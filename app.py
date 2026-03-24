@@ -1,11 +1,25 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(page_title="GC Compound Finder", layout="centered")
+# Page config (tab title + layout)
+st.set_page_config(
+    page_title="RCPPR GC Analyzer",
+    layout="centered"
+)
 
-st.title("GC Compound Name Finder")
+# ---- HEADER WITH LOGO ----
+col1, col2 = st.columns([1, 4])
 
-# Load Excel file from repo
+with col1:
+    st.image("logo.png", width=80)   # make sure logo file name matches
+
+with col2:
+    st.markdown("## RCPPR GC Analyzer")
+    st.markdown("### Compound Identification Tool")
+
+st.write("---")
+
+# Load Excel file
 file_path = "RCPPR_GC_DATABASE.xlsx"
 
 @st.cache_data
@@ -18,9 +32,9 @@ def load_data():
 df = load_data()
 
 # Input
-input_rt = st.number_input("Enter Retention Time:", min_value=0.0, format="%.4f")
+input_rt = st.number_input("Enter Retention Time (min):", min_value=0.0, format="%.4f")
 
-if st.button("Find Compound Name"):   # ✅ changed here
+if st.button("Find Compound Name"):
 
     df['diff'] = (df['Retention Time'] - input_rt).abs()
 
