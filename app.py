@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+!pip install openpyxl
 
 def main():
     st.title("Retention Time Analysis App")
