@@ -9,7 +9,7 @@ import io
 # ---------------- LOAD DATABASE FROM GITHUB ZIP ---------------- #
 @st.cache_data
 def load_database():
-    url = "https://raw.githubusercontent.com/Ganeshkumar-byte/GC-MS/main/MoNA-export-GC-MS_Spectra-json.zip"
+    url = "https://raw.githubusercontent.com/Ganeshkumar-byte/GC-MS/main/MoNA-export-GC-MS_Spectra-json(1).zip"
 
     try:
         response = requests.get(url)
