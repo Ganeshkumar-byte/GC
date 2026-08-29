@@ -9,7 +9,7 @@ import io
 # ---------------- LOAD DATABASE FROM GITHUB ZIP ---------------- #
 @st.cache_data
 def load_database():
-    url = "https://raw.githubusercontent.com/Ganeshkumar-byte/GC-MS/main/MoNA-export-GC-MS_Spectra-json(1).zip"
+    url = "https://raw.githubusercontent.com/Ganeshkumar-byte/GC-MS/main/MoNA-export-GC-MS_Spectra-json.zip"
 
     try:
         response = requests.get(url)
@@ -18,7 +18,7 @@ def load_database():
         with zipfile.ZipFile(io.BytesIO(response.content)) as z:
 
             # ✅ Correct file path (based on your debug output)
-            json_path = "MoNA-export-GC-MS_Spectra.json(1)"
+            json_path = "MoNA-export-GC-MS_Spectra.json"
 
             if json_path not in z.namelist():
                 st.error("❌ JSON file not found inside ZIP")
