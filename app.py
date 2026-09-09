@@ -174,7 +174,7 @@ def find_top_matches(manual_data, database):
         return pd.DataFrame(columns=["Name", "Formula", "Match Score"])
 
     df = pd.DataFrame(results)
-    return df.sort_values(by="Match Score", ascending=False).head(5)
+    return df.sort_values(by="Match Score", ascending=False).head(10)
 
 
 # ---------------- SEARCH BY MOLECULAR WEIGHT ---------------- #
